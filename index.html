@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#18392f">
+  <meta name="description" content="上海音乐学院乐理音乐术语基本版背诵练习，包含选择、填空与连线题。">
+  <title>术语谱 · 音乐术语背诵</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="brand" data-action="home" aria-label="返回首页">
+      <span class="brand-mark">𝄞</span><span>术语谱</span>
+    </button>
+    <div class="top-actions">
+      <span class="streak" id="streakLabel">今日尚未练习</span>
+      <button class="icon-btn" id="reviewTop" title="错题回顾" aria-label="错题回顾">↺</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer>
+    题库仅据《上海音乐学院乐理音乐术语基本版》两页资料整理 · 共 <span id="termCount">—</span> 条
+  </footer>
+
+  <template id="homeTemplate">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MUSICAL TERMS · 基本版</p>
+        <h1>把术语，<br><em>练成直觉。</em></h1>
+        <p class="lede">从速度到表情，从乐器到人声。每一次短练习，都是一次更牢固的记忆。</p>
+        <button class="primary big" data-action="quick-start">开始随机练习 <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="tempo-ring"><span>Allegro</span><b>♩ = 120</b><i></i></div>
+        <div class="float-note n1">♪</div><div class="float-note n2">♬</div>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="学习统计">
+      <article><span>题库</span><strong id="statTerms">0</strong><small>条原表术语</small></article>
+      <article><span>今日</span><strong id="statToday">0</strong><small>道已完成</small></article>
+      <article><span>正确率</span><strong id="statAccuracy">—</strong><small>历史练习</small></article>
+      <article class="error-stat"><span>待复习</span><strong id="statErrors">0</strong><small>道错题</small></article>
+    </section>
+
+    <section class="practice-section">
+      <div class="section-heading"><div><p class="eyebrow">PRACTICE MODES</p><h2>选择练习方式</h2></div><button class="text-btn" data-action="review">查看错题 →</button></div>
+      <div class="mode-grid">
+        <button class="mode-card coral" data-mode="choice"><span class="mode-icon">A</span><div><h3>选择题</h3><p>四选一，快速辨义</p></div><b>01</b></button>
+        <button class="mode-card mint" data-mode="fill"><span class="mode-icon">填</span><div><h3>中文填空</h3><p>只写中文，宽容匹配</p></div><b>02</b></button>
+        <button class="mode-card gold" data-mode="match"><span class="mode-icon">↔</span><div><h3>连线配对</h3><p>左右连接，成组记忆</p></div><b>03</b></button>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="section-heading"><div><p class="eyebrow">TERM LIBRARY</p><h2>按分类专项突破</h2></div></div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
